@@ -1,4 +1,4 @@
-const { fabric } = require("./fabric");
+
 
 var canvas= new fabric.Canvas('myCanvas');
 ball_y=0;
@@ -11,8 +11,8 @@ hole_x=800;
 block_image_width = 5;
 block_image_height = 5;
 
-function Load_img(){
-fabric.Image.fromURL("golf-h1.png",function(Img) {
+function load_img(){
+fabric.Image.fromURL("golf-h.png",function(Img) {
 	hole_obj=Img;
 	hole_obj.scaleToWidth(50);
 hole_obj.scaleToHeight(50);
@@ -36,7 +36,8 @@ function new_image()
 		  left:ball_x
 
 	  });
-  });
+canvas.add(ball_obj);
+	});
 }
 
 window.addEventListener("keydown", my_keydown);
